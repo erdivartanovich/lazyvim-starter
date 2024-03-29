@@ -32,11 +32,15 @@ vim.keymap.set("n", "Y", '"+y')
 -- Quick SED
 vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "SED" })
 
+-- Quick :G
+vim.keymap.set("n", "<leader>G", [[:g/<C-r><C-w>/]], { desc = "Global EX" })
+vim.keymap.set("n", "<leader>!", [[:!g/<C-r><C-w>/]], { desc = "Global EX" })
+
 -- Quick quit
 vim.keymap.set("n", "W", ":w!<CR>", { silent = true })
 vim.keymap.set("n", "Z", ":wq!<CR>", { silent = true })
-vim.keymap.set("n", "Q", ":q!<CR>", { silent = true })
+vim.keymap.set("n", "Q", ":bdelete<CR>", { silent = true })
 
 -- Tab/BufferLine
-vim.keymap.set("n", "<leader><tab>H", ":BufferLineMovePrev<CR>", { silent = true })
-vim.keymap.set("n", "<leader><tab>L", ":BufferLineMoveNext<CR>", { silent = true })
+vim.keymap.set("n", "<M-H>", ":BufferLineMovePrev<CR>", { silent = true })
+vim.keymap.set("n", "<M-L>", ":BufferLineMoveNext<CR>", { silent = true })
