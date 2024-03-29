@@ -37,7 +37,6 @@ vim.keymap.set("n", "<leader>G", [[:g/<C-r><C-w>/]], { desc = "Global EX" })
 vim.keymap.set("n", "<leader>!", [[:!g/<C-r><C-w>/]], { desc = "Global EX" })
 
 -- Quick quit
-vim.keymap.set("n", "W", ":w!<CR>", { silent = true })
 vim.keymap.set("n", "Z", ":wq!<CR>", { silent = true })
 vim.keymap.set("n", "Q", ":bdelete<CR>", { silent = true })
 
