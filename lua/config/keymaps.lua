@@ -34,7 +34,7 @@ vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], {
 
 -- Quick :G
 vim.keymap.set("n", "<leader>G", [[:g/<C-r><C-w>/]], { desc = "Global EX" })
-vim.keymap.set("n", "<leader>!", [[:!g/<C-r><C-w>/]], { desc = "Global EX" })
+vim.keymap.set("n", "<leader>!", [[:!g/<C-r><C-w>/]], { desc = "!Global EX" })
 
 -- Quick quit
 vim.keymap.set("n", "Z", ":wq!<CR>", { silent = true })
