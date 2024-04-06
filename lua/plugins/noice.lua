@@ -4,7 +4,7 @@ return {
     cmdline = {
       view = "cmdline",
       format = {
-        filter = { pattern = "^:%s*!", icon = "󰢚 > ", lang = "bash" },
+        filter = { pattern = "^:%s*!", icon = "󰢚 :) ", lang = "bash" },
       },
     },
   },
