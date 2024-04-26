@@ -23,12 +23,8 @@ return {
   opts = {
     workspaces = {
       {
-        name = "vlfberht",
-        path = "/home/rdi/Cabin/vaults/vlfberht/",
-      },
-      {
-        name = "projects",
-        path = "/home/rdi/Cabin/vaults/projects",
+        name = "vaults",
+        path = "/home/rdi/Cabin/vaults/",
       },
     },
 

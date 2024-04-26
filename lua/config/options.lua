@@ -4,10 +4,6 @@
 
 vim.o.autochdir = false
 
--- search
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-
 -- indent
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
