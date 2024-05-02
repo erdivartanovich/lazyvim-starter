@@ -21,13 +21,13 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Better lines join
 vim.keymap.set("n", "J", "mzJ`z")
 
--- Better paste
-vim.keymap.set("x", "<leader>p", '"_dP')
-
 -- Better yanking
 vim.keymap.set("n", "y", '"+y')
 vim.keymap.set("v", "y", '"+y')
 vim.keymap.set("n", "Y", '"+y')
+
+-- Better paste
+vim.keymap.set("x", "<leader>p", '"_dP')
 
 -- Quick SED
 vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "SED" })
