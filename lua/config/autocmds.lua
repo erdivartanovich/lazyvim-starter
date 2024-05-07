@@ -6,13 +6,13 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-  group = augroup("set_color_scheme_and_transparent_bg"),
+vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+  group = augroup("set_transparent_bg"),
   callback = function()
-    vim.cmd([[colorscheme zenbones]])
     vim.cmd("highlight Normal guibg=none")
     vim.cmd("highlight NonText guibg=none")
     vim.cmd("highlight Normal ctermbg=none")
     vim.cmd("highlight NonText ctermbg=none")
+    vim.cmd("highlight NormalFloat guibg=none")
   end,
 })
