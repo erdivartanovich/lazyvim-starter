@@ -1,6 +1,7 @@
--- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+
+vim.keymap.set("n", "<leader>r", ":source ~/.config/nvim/init.lua<CR>")
 
 -- custom c-d c-u motion
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -41,5 +42,9 @@ vim.keymap.set("n", "Z", ":wq!<CR>", { silent = true })
 vim.keymap.set("n", "Q", ":bdelete<CR>", { silent = true })
 
 -- Tab/BufferLine
+vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true })
+vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
+vim.keymap.set("n", "<leader>bs", ":BufferLinePick<CR>", { silent = true })
+vim.keymap.set("n", "<leader>bc", ":BufferLinePickClose<CR>", { silent = true })
 vim.keymap.set("n", "<M-H>", ":BufferLineMovePrev<CR>", { silent = true })
 vim.keymap.set("n", "<M-L>", ":BufferLineMoveNext<CR>", { silent = true })

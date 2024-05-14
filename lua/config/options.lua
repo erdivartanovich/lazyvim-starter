@@ -1,8 +1,7 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
-vim.g.maplocalleader = ";"
-vim.o.autochdir = false
+vim.o.autochdir = true
 
 -- indent
 vim.opt.tabstop = 2
@@ -34,9 +33,10 @@ end
 vim.o.breakindent = true
 
 -- Case-insensitive searching UNLESS \C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 -- Keep signcolumn on by default
 vim.opt.signcolumn = "yes"
 

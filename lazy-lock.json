@@ -45,6 +45,7 @@
   "oil.nvim": { "branch": "master", "commit": "e462a3446505185adf063566f5007771b69027a1" },
   "persistence.nvim": { "branch": "main", "commit": "4982499c1636eac254b72923ab826ee7827b3084" },
   "plenary.nvim": { "branch": "master", "commit": "8aad4396840be7fc42896e3011751b7609ca4119" },
+  "pywal": { "branch": "main", "commit": "505fb7779d55e65acff9f4937fa97b93499868c7" },
   "rest.nvim": { "branch": "main", "commit": "60428cc313b8cb11fa8fb1b94f289b14d3121fa4" },
   "rustaceanvim": { "branch": "master", "commit": "3d3818a6e4f88e1ccf40088df0cc3f525e0cbdf8" },
   "staline.nvim": { "branch": "main", "commit": "c49f2deaba3d3c669e7243b57619e0078e7a351b" },
