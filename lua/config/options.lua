@@ -1,6 +1,10 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
+
+-- NOTE: You should make sure your terminal supports this
+vim.o.termguicolors = true
+
 vim.o.autochdir = true
 
 -- indent
@@ -10,8 +14,8 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
--- disable wrap line
-vim.opt.wrap = false
+-- enable wrap line
+vim.opt.wrap = true
 
 -- swap backup and undo
 vim.opt.swapfile = false
@@ -51,7 +55,7 @@ vim.opt.splitright = true
 vim.opt.isfname:append("@-@")
 
 -- colorcolumn
--- vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "100"
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -59,17 +63,3 @@ vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menu,menuone,noselect"
-
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
-
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = "*",
-})

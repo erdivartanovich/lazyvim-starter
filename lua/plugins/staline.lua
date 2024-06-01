@@ -5,9 +5,9 @@ return {
     local colors = pywal_core.get_colors()
     return {
       sections = {
-        left = { "  ", "mode", " ", "branch", " ", "lsp" },
-        mid = {},
-        right = { "file_name", "line_column" },
+        left = { "  ", "mode", " ", "lsp" },
+        mid = { "󰪶", "cwd", "", "file_name" },
+        right = { "branch" },
       },
       mode_icons = {
         ["n"] = "!󰨞 ",
