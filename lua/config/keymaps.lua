@@ -37,14 +37,6 @@ vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], {
 vim.keymap.set("n", "<leader>G", [[:g/<C-r><C-w>/]], { desc = "Global EX" })
 vim.keymap.set("n", "<leader>!", [[:!g/<C-r><C-w>/]], { desc = "!Global EX" })
 
--- Quick quit
--- vim.keymap.set("n", "Z", ":wq!<CR>", { silent = true })
--- vim.keymap.set("n", "Q", ":bdelete<CR>", { silent = true })
-
--- Tab/BufferLine
-vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true })
-vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
-vim.keymap.set("n", "<leader>bs", ":BufferLinePick<CR>", { silent = true })
-vim.keymap.set("n", "<leader>bc", ":BufferLinePickClose<CR>", { silent = true })
-vim.keymap.set("n", "<M-H>", ":BufferLineMovePrev<CR>", { silent = true })
-vim.keymap.set("n", "<M-L>", ":BufferLineMoveNext<CR>", { silent = true })
+-- Buffer
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", { silent = true })
+vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { silent = true })
