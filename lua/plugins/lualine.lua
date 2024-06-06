@@ -15,7 +15,7 @@ return {
         theme = "auto",
         globalstatus = vim.o.laststatus == 3,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
-        component_separators = { left = "", right = " " },
+        component_separators = { left = " ", right = "" },
       },
       sections = {
         lualine_a = {},
@@ -27,15 +27,15 @@ return {
             color = function()
               -- auto change color according to neovims mode
               local mode_color = {
-                n = colors.color5,
-                i = colors.color2,
+                n = colors.color2,
+                i = colors.color6,
                 v = colors.color4,
                 [""] = colors.color4,
                 V = colors.color4,
                 c = colors.color6,
                 no = colors.color2,
-                s = colors.color1,
-                S = colors.color1,
+                s = colors.color7,
+                S = colors.color7,
                 [""] = colors.color1,
                 ic = colors.color7,
                 R = colors.color3,
@@ -50,67 +50,41 @@ return {
               }
               return { fg = mode_color[vim.fn.mode()] }
             end,
-            padding = { left = 3, right = 3 },
+            padding = { left = 2, right = 3 },
           },
         },
         lualine_c = {
-          "branch",
+          {
+            "branch",
+            color = function()
+              return LazyVim.ui.fg("Special")
+            end,
+          },
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-          { LazyVim.lualine.pretty_path() },
-        },
-        lualine_x = {
-        -- stylua: ignore
-        {
-          function() return require("noice").api.status.mode.get() end,
-          cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-          color = function() return LazyVim.ui.fg("Constant") end,
-        },
-        -- stylua: ignore
-        -- stylua: ignore
-        {
-          "diagnostics",
-          symbols = {
-            error = icons.diagnostics.Error,
-            warn = icons.diagnostics.Warn,
-            info = icons.diagnostics.Info,
-            hint = icons.diagnostics.Hint,
+          {
+            LazyVim.lualine.pretty_path(),
+            color = function()
+              return LazyVim.ui.fg("Special")
+            end,
           },
         },
-        -- stylua: ignore
-        {
-          function() return require("noice").api.status.command.get() end,
-          cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-          color = function() return LazyVim.ui.fg("Statement") end,
-        },
-        -- stylua: ignore
-        {
-          function() return "  " .. require("dap").status() end,
-          cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
-          color = function() return LazyVim.ui.fg("Debug") end,
-        },
-        -- stylua: ignore
-        {
-          require("lazy.status").updates,
-          cond = require("lazy.status").has_updates,
-          color = function() return LazyVim.ui.fg("Special") end,
-        },
+        lualine_x = {
+          -- stylua: ignore
           {
-            "diff",
+            function() return require("noice").api.status.mode.get() end,
+            cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+            color = function() return LazyVim.ui.fg("Constant") end,
+          },
+          -- stylua: ignore
+          -- stylua: ignore
+          {
+            "diagnostics",
             symbols = {
-              added = icons.git.added,
-              modified = icons.git.modified,
-              removed = icons.git.removed,
+              error = icons.diagnostics.Error,
+              warn = icons.diagnostics.Warn,
+              info = icons.diagnostics.Info,
+              hint = icons.diagnostics.Hint,
             },
-            source = function()
-              local gitsigns = vim.b.gitsigns_status_dict
-              if gitsigns then
-                return {
-                  added = gitsigns.added,
-                  modified = gitsigns.changed,
-                  removed = gitsigns.removed,
-                }
-              end
-            end,
           },
         },
         lualine_y = {
