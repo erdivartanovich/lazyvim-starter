@@ -1,5 +1,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+if vim.g.vscode then
+  return
+end
 
 vim.keymap.set("n", "<leader>r", ":source ~/.config/nvim/init.lua<CR>")
 

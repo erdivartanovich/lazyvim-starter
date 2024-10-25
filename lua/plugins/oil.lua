@@ -7,7 +7,14 @@ return {
       function()
         require("oil").toggle_float()
       end,
-      desc = "NeoTree",
+      desc = "File Explorer",
+    },
+    {
+      "<leader>e",
+      function()
+        require("oil").toggle_float()
+      end,
+      desc = "File Explorer",
     },
   },
   opts = function()

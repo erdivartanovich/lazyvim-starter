@@ -1,8 +1,11 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
-
 -- NOTE: You should make sure your terminal supports this
+if vim.g.vscode then
+  return
+end
+
 vim.o.termguicolors = true
 
 vim.o.autochdir = true
@@ -16,6 +19,7 @@ vim.opt.smartindent = true
 
 -- enable wrap line
 vim.opt.wrap = true
+vim.opt.textwidth = 80
 
 -- swap backup and undo
 vim.opt.swapfile = false
